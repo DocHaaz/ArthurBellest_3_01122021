@@ -18,6 +18,18 @@ a {
   color: black;
 }
 
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 14px;
+}
+
 .header {
   width: 100%;
   position: relative;
@@ -61,12 +73,12 @@ a {
 }
 
 .tracking {
-  background-color: #ececec;
+  background-color: #e8e8e8;
   text-align: center;
 }
 
 input[type=text] {
-  background-color: #ececec;
+  background-color: #e8e8e8;
   color: black;
   border: lightgray;
   padding: 14px 14px;
@@ -78,8 +90,29 @@ input[type=text] {
 
 #placesearch::placeholder {
   color: black;
-  opacity: 0.9;
+  opacity: 0.8;
   font-size: 14px;
+}
+
+.company {
+  background-color: #F2F2F2;
+  padding: 20px 0px 40px 0px;
+  text-align: center;
+}
+.company h1 {
+  padding: 0px 60px;
+}
+.company p {
+  padding: 0px 45px;
+  opacity: 0.6;
+}
+.company button {
+  padding: 15px;
+  border: 0px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
 }
 
 .restaurant {

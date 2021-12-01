@@ -3,7 +3,7 @@ $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
 $colour-background: #F2F2F2;
 $colour-footer: #232323;
-$colour-search: #ececec;
+$colour-search: #e8e8e8;
 
 
 @font-face {
@@ -25,6 +25,18 @@ body {
 a {
     text-decoration: none;
     color: black;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 14px;
 }
 
 .header {
@@ -87,8 +99,29 @@ input[type=text] {
 
 #placesearch::placeholder {
     color: black;
-    opacity: 0.9;
+    opacity: 0.8;
     font-size: 14px;
+}
+
+.company {
+    background-color: $colour-background;
+    padding: 20px 0px 40px 0px;
+    text-align: center;
+    & h1 {
+        padding: 0px 60px;
+    }
+    & p {
+        padding: 0px 45px;
+        opacity: 0.6;
+    }
+    & button {
+        padding: 15px;
+        border: 0px;
+        border-radius: 25px;
+        color: white;
+        background: linear-gradient($colour-secondary, $colour-primary);
+        cursor: pointer;
+    }
 }
 
 .restaurant {
