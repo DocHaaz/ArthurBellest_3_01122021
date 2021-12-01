@@ -1,0 +1,84 @@
+@font-face {
+  font-family: Shrikhand;
+  src: url(../Font/Shrikhand-Regular.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../Font/Roboto-Regular.ttf);
+}
+body {
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: black 5px 0px 4px, #F2F2F2 -1px 0px 0px;
+}
+.header__logo {
+  width: 200px;
+  margin: 24px 0px 12px 0px;
+}
+.header__arrow {
+  position: absolute;
+  left: 10%;
+  margin-top: 28px;
+}
+
+.footer {
+  color: white;
+  background-color: #232323;
+  padding: 10px 0px;
+}
+.footer__logo {
+  font-family: Shrikhand;
+  font-size: 20px;
+  padding-left: 40px;
+}
+.footer__icon {
+  width: 20px;
+  margin-right: 8px;
+}
+.footer__list {
+  list-style-type: none;
+}
+.footer__list li {
+  line-height: 2;
+}
+
+.fa-arrow-left {
+  font-size: 26px;
+  opacity: 0.8;
+}
+
+.menu__heading {
+  font-family: Shrikhand;
+}
+.menu__img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+}
+.restaurant__card {
+  width: 90%;
+  margin: auto;
+}
+.restaurant__img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/*# sourceMappingURL=Style.css.map */

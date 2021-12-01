@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Shrikhand;
+    src: url(../Font/Shrikhand-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../Font/Roboto-Regular.ttf);
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    font-family: Roboto;
+}

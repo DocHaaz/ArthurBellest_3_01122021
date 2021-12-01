@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: black 5px 0px 4px, #F2F2F2 -1px 0px 0px;
+    &__logo {
+        width: 200px;
+        margin: 24px 0px 12px 0px;
+    }
+}

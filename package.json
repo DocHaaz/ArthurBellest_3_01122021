@@ -1,0 +1,11 @@
+{
+  "name": "p3_bellest_arthur",
+  "version": "1.0.0",
+  "description": "Oh my food !",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch Style/Sass/Main.scss:Style/CSS/Style.css"
+  },
+  "author": "Arthur Bellest",
+  "license": "ISC"
+}

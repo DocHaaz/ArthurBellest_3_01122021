@@ -1,0 +1,18 @@
+/* Menu */
+.header {
+    &__arrow {
+        position: absolute;
+        left: 10%;
+        margin-top: 28px;
+    }
+}
+
+.menu {
+    &__heading {
+        font-family: Shrikhand;
+    }
+    &__img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
