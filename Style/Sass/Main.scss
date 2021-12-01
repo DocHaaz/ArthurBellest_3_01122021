@@ -1,6 +1,10 @@
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
+$colour-background: #F2F2F2;
+$colour-footer: #232323;
+$colour-search: #ececec;
+
 
 @font-face {
     font-family: Shrikhand;
@@ -41,7 +45,7 @@ a {
 
 .footer {
     color: white;
-    background-color: #232323;
+    background-color: $colour-footer;
     padding: 10px 0px;
     &__logo {
         font-family: Shrikhand;
@@ -65,14 +69,26 @@ a {
     opacity: 0.8;
 }
 
-.menu {
-    &__heading {
-        font-family: Shrikhand;
-    }
-    &__img {
-        object-fit: cover;
-        width: 100%;
-    }
+.tracking {
+    background-color: $colour-search;
+    text-align: center;
+}
+
+input[type=text] {
+    background-color: $colour-search;
+    color: black;
+    border: lightgray;
+    padding: 14px 14px
+}
+
+.fa-map-marker-alt {
+    opacity: 0.8;
+}
+
+#placesearch::placeholder {
+    color: black;
+    opacity: 0.9;
+    font-size: 14px;
 }
 
 .restaurant {
@@ -81,6 +97,16 @@ a {
     &__card {
         width: 90%;
         margin: auto;
+    }
+    &__img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.menu {
+    &__heading {
+        font-family: Shrikhand;
     }
     &__img {
         object-fit: cover;

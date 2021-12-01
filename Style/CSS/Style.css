@@ -60,12 +60,26 @@ a {
   opacity: 0.8;
 }
 
-.menu__heading {
-  font-family: Shrikhand;
+.tracking {
+  background-color: #ececec;
+  text-align: center;
 }
-.menu__img {
-  object-fit: cover;
-  width: 100%;
+
+input[type=text] {
+  background-color: #ececec;
+  color: black;
+  border: lightgray;
+  padding: 14px 14px;
+}
+
+.fa-map-marker-alt {
+  opacity: 0.8;
+}
+
+#placesearch::placeholder {
+  color: black;
+  opacity: 0.9;
+  font-size: 14px;
 }
 
 .restaurant {
@@ -77,6 +91,14 @@ a {
   margin: auto;
 }
 .restaurant__img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.menu__heading {
+  font-family: Shrikhand;
+}
+.menu__img {
   object-fit: cover;
   width: 100%;
 }
