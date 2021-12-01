@@ -4,7 +4,11 @@
 }
 @font-face {
   font-family: Roboto;
-  src: url(../Font/Roboto-Regular.ttf);
+  src: url(../Font/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: Roboto-thin;
+  src: url(../Font/Roboto-Light.ttf);
 }
 body {
   width: 100%;
@@ -27,7 +31,8 @@ h2 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
+  font-family: roboto-thin;
 }
 
 .header {
@@ -37,7 +42,7 @@ p {
   box-shadow: black 5px 0px 4px, #F2F2F2 -1px 0px 0px;
 }
 .header__logo {
-  width: 200px;
+  width: 180px;
   margin: 24px 0px 12px 0px;
 }
 .header__arrow {
@@ -78,6 +83,7 @@ p {
 }
 
 input[type=text] {
+  width: 120px;
   background-color: #e8e8e8;
   color: black;
   border: lightgray;
@@ -92,32 +98,66 @@ input[type=text] {
   color: black;
   opacity: 0.8;
   font-size: 14px;
+  font-family: roboto;
 }
 
 .company {
   background-color: #F2F2F2;
-  padding: 20px 0px 40px 0px;
+  padding: 20px 0px 50px 0px;
   text-align: center;
 }
 .company h1 {
   padding: 0px 60px;
 }
 .company p {
-  padding: 0px 45px;
+  padding: 0px 20px;
   opacity: 0.6;
 }
 .company button {
-  padding: 15px;
+  font-family: roboto;
+  font-size: 14px;
+  padding: 16px 20px;
   border: 0px;
-  border-radius: 25px;
+  border-radius: 30px;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
   cursor: pointer;
 }
 
+.running {
+  margin: 10% 5%;
+}
+.running__bloc {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin: 20px 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #F2F2F2;
+}
+.running__number {
+  position: absolute;
+  font-size: 12px;
+  left: -8px;
+  padding: 4px 8px;
+  border-radius: 100%;
+  color: white;
+  background-color: #9356DC;
+}
+.running__icon {
+  opacity: 0.6;
+  padding: 0px 20px 0px 35px;
+}
+.running p {
+  font-family: roboto;
+}
+
 .restaurant {
   display: flex;
   flex-direction: column;
+  background-color: #F2F2F2;
 }
 .restaurant__card {
   width: 90%;
