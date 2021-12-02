@@ -34,15 +34,40 @@ a {
 
 h1 {
     font-size: 22px;
+    margin: 0%;
 }
 
 h2 {
     font-size: 22px;
+    margin: 0%;
+}
+
+h3 {
+    margin: 0%;
 }
 
 p {
     font-size: 16px;
     font-family: roboto-thin;
+    margin: 0%;
+}
+
+.fa-heart {
+    font-size: 25px;
+}
+
+button {
+    font-family: roboto;
+    width: 220px;
+    height: 50px;
+    font-size: 14px;
+    border: 0px;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+    color: white;
+    background: linear-gradient($colour-secondary, $colour-primary);
+    cursor: pointer;
 }
 
 .header {
@@ -79,6 +104,9 @@ p {
         & li {
             line-height: 2;
             font-family: roboto-thin;
+        }
+        & a {
+            color: white;
         }
     }
 }
@@ -117,21 +145,11 @@ input[type=text] {
     padding: 20px 0px 50px 0px;
     text-align: center;
     & h1 {
-        padding: 0px 60px;
+        padding: 10px 60px;
     }
     & p {
-        padding: 0px 20px;
+        padding: 20px 20px;
         opacity: 0.6;
-    }
-    & button {
-        font-family: roboto;
-        font-size: 14px;
-        padding: 16px 20px;
-        border: 0px;
-        border-radius: 30px;
-        color: white;
-        background: linear-gradient($colour-secondary, $colour-primary);
-        cursor: pointer;
     }
 }
 
@@ -183,9 +201,10 @@ input[type=text] {
     }
     &__new {
         position: absolute;
-        top: 0%;
+        top: 5%;
         right: 5%;
-        padding: 8px;
+        padding: 6px 12px;
+        border-radius: 2px;
         background-color: $colour-tertiary;
         font-size: 12px;
         font-family: roboto;
@@ -208,20 +227,65 @@ input[type=text] {
         }
     }
     &__heart {
-        font-size: 25px;
-        font-weight: 400;
         position: absolute;
         bottom: 10%;
         right: 5%;
     }
+    & h2 {
+        margin-bottom: 25px;
+    }
 }
 
 .menu {
-    &__heading {
-        font-family: Shrikhand;
-    }
+    background-color: $colour-background;
+    padding-bottom: 80px;
     &__img {
         object-fit: cover;
         width: 100%;
     }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 25px;
+        padding-left: 15px;
+        margin-top: -50px;
+        text-align: start;
+        position: relative;
+        background-color: $colour-background;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+    }
+    &__heading {
+        font-family: Shrikhand;
+        font-size: 28px;
+    }
+    &__heart {
+        margin-right: 8%;
+    }
+    &__bloc {
+        width: 90%;
+        margin: auto;
+    }
+    &__card {
+        & h3 {
+            margin: 0%;
+        }
+    }
+    & h2 {
+        font-family: roboto-thin;
+        font-weight: 400;
+        text-transform: uppercase;
+        display: inline-block;
+        position: relative;
+        &:after {
+            content: "";
+            width: 50px;
+            border-bottom: 3px solid $colour-tertiary;
+            position: absolute;
+            bottom: -8px;
+            left: 0%;
+        }
+    }
 }
+

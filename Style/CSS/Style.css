@@ -24,15 +24,40 @@ a {
 
 h1 {
   font-size: 22px;
+  margin: 0%;
 }
 
 h2 {
   font-size: 22px;
+  margin: 0%;
+}
+
+h3 {
+  margin: 0%;
 }
 
 p {
   font-size: 16px;
   font-family: roboto-thin;
+  margin: 0%;
+}
+
+.fa-heart {
+  font-size: 25px;
+}
+
+button {
+  font-family: roboto;
+  width: 220px;
+  height: 50px;
+  font-size: 14px;
+  border: 0px;
+  border-radius: 30px;
+  display: block;
+  margin: auto;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
 }
 
 .header {
@@ -72,6 +97,9 @@ p {
   line-height: 2;
   font-family: roboto-thin;
 }
+.footer__list a {
+  color: white;
+}
 
 .fa-arrow-left {
   font-size: 26px;
@@ -108,21 +136,11 @@ input[type=text] {
   text-align: center;
 }
 .company h1 {
-  padding: 0px 60px;
+  padding: 10px 60px;
 }
 .company p {
-  padding: 0px 20px;
+  padding: 20px 20px;
   opacity: 0.6;
-}
-.company button {
-  font-family: roboto;
-  font-size: 14px;
-  padding: 16px 20px;
-  border: 0px;
-  border-radius: 30px;
-  color: white;
-  background: linear-gradient(#FF79DA, #9356DC);
-  cursor: pointer;
 }
 
 .running {
@@ -174,9 +192,10 @@ input[type=text] {
 }
 .restaurant__new {
   position: absolute;
-  top: 0%;
+  top: 5%;
   right: 5%;
-  padding: 8px;
+  padding: 6px 12px;
+  border-radius: 2px;
   background-color: #99E2D0;
   font-size: 12px;
   font-family: roboto;
@@ -199,19 +218,63 @@ input[type=text] {
   margin: 0% 0% 15px 0%;
 }
 .restaurant__heart {
-  font-size: 25px;
-  font-weight: 400;
   position: absolute;
   bottom: 10%;
   right: 5%;
 }
+.restaurant h2 {
+  margin-bottom: 25px;
+}
 
-.menu__heading {
-  font-family: Shrikhand;
+.menu {
+  background-color: #F2F2F2;
+  padding-bottom: 80px;
 }
 .menu__img {
   object-fit: cover;
   width: 100%;
+}
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 15px;
+  margin-top: -50px;
+  text-align: start;
+  position: relative;
+  background-color: #F2F2F2;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+.menu__heading {
+  font-family: Shrikhand;
+  font-size: 28px;
+}
+.menu__heart {
+  margin-right: 8%;
+}
+.menu__bloc {
+  width: 90%;
+  margin: auto;
+}
+.menu__card h3 {
+  margin: 0%;
+}
+.menu h2 {
+  font-family: roboto-thin;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+.menu h2:after {
+  content: "";
+  width: 50px;
+  border-bottom: 3px solid #99E2D0;
+  position: absolute;
+  bottom: -8px;
+  left: 0%;
 }
 
 /*# sourceMappingURL=Style.css.map */
