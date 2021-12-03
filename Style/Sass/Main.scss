@@ -1,6 +1,7 @@
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
+$colour-molten: linear-gradient($colour-secondary, $colour-primary);
 $colour-background: #F2F2F2;
 $colour-footer: #232323;
 $colour-search: #e8e8e8;
@@ -67,15 +68,21 @@ button {
     display: block;
     margin: auto;
     color: white;
-    background: linear-gradient($colour-secondary, $colour-primary);
+    background: $colour-molten;
+    transition-duration: 0.3;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &:hover {
+        opacity: 0.9;
+        box-shadow: rgba(0, 0, 0, 0.24) 2px 5px 4px;
+    }
 }
 
 .header {
     width: 100%;
     position: relative;
     text-align: center;
-    box-shadow: black 5px 0px 4px, #F2F2F2 -1px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     &__logo {
         width: 180px;
         margin: 24px 0px 12px 0px;
@@ -166,6 +173,25 @@ input[type=text] {
         border-radius: 20px;
         position: relative;
         background-color: $colour-background;
+        &::before {
+            transform: scale(0);
+            content: " ";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: $colour-primary;
+            opacity: 0.1;
+            z-index: 1;
+            transition: 100ms;
+            border-radius: 20px;
+            transform-origin: left;
+        }
+        &:hover::before {
+            transform: scale(1);
+        }
+        &:hover .running__icon {
+            color: $colour-primary;
+            opacity: 1;
+        }
     }
     &__number {
         position: absolute;
@@ -184,7 +210,6 @@ input[type=text] {
     }
     & p {
         font-family: roboto;
-    
     }
 }
 
@@ -235,6 +260,9 @@ input[type=text] {
         position: absolute;
         bottom: 10%;
         right: 5%;
+        &:active {
+            color: $colour-molten;
+        }
     }
     & h2 {
         margin-bottom: 25px;
@@ -280,6 +308,9 @@ input[type=text] {
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 15px;
+    }
+    &__txt {
+        margin-right: 50px;
     }
     &__price {
         position: absolute;

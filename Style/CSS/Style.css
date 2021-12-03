@@ -58,14 +58,20 @@ button {
   margin: auto;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
+  transition-duration: 0.3;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+button:hover {
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.24) 2px 5px 4px;
 }
 
 .header {
   width: 100%;
   position: relative;
   text-align: center;
-  box-shadow: black 5px 0px 4px, #F2F2F2 -1px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .header__logo {
   width: 180px;
@@ -158,6 +164,28 @@ input[type=text] {
   position: relative;
   background-color: #F2F2F2;
 }
+.running__bloc::before {
+  transform: scale(0);
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #9356DC;
+  opacity: 0.1;
+  z-index: 1;
+  transition: 100ms;
+  border-radius: 20px;
+  transform-origin: left;
+}
+.running__bloc:hover::before {
+  transform: scale(1);
+}
+.running__bloc:hover .running__icon {
+  color: #9356DC;
+  opacity: 1;
+}
 .running__number {
   position: absolute;
   font-size: 12px;
@@ -226,6 +254,9 @@ input[type=text] {
   bottom: 10%;
   right: 5%;
 }
+.restaurant__heart:active {
+  color: linear-gradient(#FF79DA, #9356DC);
+}
 .restaurant h2 {
   margin-bottom: 25px;
 }
@@ -270,6 +301,9 @@ input[type=text] {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 15px;
+}
+.menu__txt {
+  margin-right: 50px;
 }
 .menu__price {
   position: absolute;
