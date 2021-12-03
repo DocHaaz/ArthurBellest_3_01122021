@@ -326,6 +326,8 @@ input[type=text] {
     &__bloc {
         width: 90%;
         margin: auto;
+        animation: menu 600ms 200ms backwards;
+        transform-origin: top left;
     }
     &__card {
         position: relative;
@@ -334,12 +336,18 @@ input[type=text] {
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 15px;
+        animation: menucard 400ms ease-out backwards;
+        @for $i from 1 through 10 {
+            &--#{$i} {
+                animation-delay: (150ms * $i);
+            }
+        }
         &::after {
             width: 20%;
             content: " ";
             background-color: $colour-tertiary;
             position: absolute;
-            top: 0; right: 0; bottom: 0; left: 100;
+            top: 0; right: 0; bottom: 0; left: 80%;
             transform: scale(0);
             z-index: 1;
             transition: 300ms;
@@ -397,3 +405,17 @@ input[type=text] {
     }
 }
 
+@keyframes menu{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes menucard{
+    0% {
+        transform: translateX(-1500%);
+    }    
+}

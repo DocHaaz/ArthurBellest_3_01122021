@@ -318,6 +318,8 @@ input[type=text] {
 .menu__bloc {
   width: 90%;
   margin: auto;
+  animation: menu 600ms 200ms backwards;
+  transform-origin: top left;
 }
 .menu__card {
   position: relative;
@@ -326,6 +328,37 @@ input[type=text] {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 15px;
+  animation: menucard 400ms ease-out backwards;
+}
+.menu__card--1 {
+  animation-delay: 150ms;
+}
+.menu__card--2 {
+  animation-delay: 300ms;
+}
+.menu__card--3 {
+  animation-delay: 450ms;
+}
+.menu__card--4 {
+  animation-delay: 600ms;
+}
+.menu__card--5 {
+  animation-delay: 750ms;
+}
+.menu__card--6 {
+  animation-delay: 900ms;
+}
+.menu__card--7 {
+  animation-delay: 1050ms;
+}
+.menu__card--8 {
+  animation-delay: 1200ms;
+}
+.menu__card--9 {
+  animation-delay: 1350ms;
+}
+.menu__card--10 {
+  animation-delay: 1500ms;
 }
 .menu__card::after {
   width: 20%;
@@ -335,7 +368,7 @@ input[type=text] {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 100;
+  left: 80%;
   transform: scale(0);
   z-index: 1;
   transition: 300ms;
@@ -389,6 +422,20 @@ input[type=text] {
 }
 .menu button {
   margin-top: 50px;
+}
+
+@keyframes menu {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes menucard {
+  0% {
+    transform: translateX(-1500%);
+  }
 }
 
 /*# sourceMappingURL=Style.css.map */
