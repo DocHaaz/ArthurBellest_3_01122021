@@ -405,6 +405,71 @@ input[type=text] {
     }
 }
 
+.loading {
+    z-index: 99999;
+    background-color: white;
+    font-family: Shrikhand;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    cursor: wait;
+    animation: loading 0.1ms 4s forwards;
+}
+
+.loadspinner {
+    display: flex;
+    justify-content: center;
+    &__txt {
+        margin-left: 20px;
+        font-size: 60px;
+        animation: bounce 1s infinite;
+        &--1 {
+            color: $colour-primary;
+            animation-delay: 0s;
+        }
+        &--2 {
+            color: $colour-secondary;
+            animation-delay: 0.1s;
+        }
+        &--3 {
+            color: $colour-tertiary;
+            animation-delay: 0.2s;
+        }
+    }
+}
+.loadspin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 150px;
+    &__element {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        margin-top: 50px;
+        margin-left: 30px;
+        animation: load 1s infinite;
+        &--1 {
+            background-color: $colour-tertiary;
+            animation-delay: 0s;
+        }
+        &--2 {
+            background-color: $colour-secondary;
+            animation-delay: 0.3s;
+        }
+        &--3 {
+            background-color: $colour-primary;
+            animation-delay: 0.6s;
+        } 
+    }
+    
+}
+
 @keyframes menu{
     0%{
         transform: scale(0);
@@ -419,3 +484,30 @@ input[type=text] {
         transform: translateX(-1500%);
     }    
 }
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(1500%);
+    }
+}
+
+@keyframes load {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
