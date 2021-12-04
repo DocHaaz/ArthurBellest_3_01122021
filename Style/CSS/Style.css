@@ -322,8 +322,10 @@ input[type=text] {
   transform-origin: top left;
 }
 .menu__card {
+  display: flex;
+  justify-content: space-between;
   position: relative;
-  padding: 12px 16% 12px 10px;
+  padding: 12px;
   margin: 15px 0px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -383,7 +385,10 @@ input[type=text] {
   opacity: 1;
 }
 .menu__card:active .menu__price {
-  right: 24%;
+  transform: translateX(-80px);
+}
+.menu__card:active .menu__txt {
+  margin-right: 90px;
 }
 .menu__check {
   font-size: 22px;
@@ -396,12 +401,22 @@ input[type=text] {
   transition-delay: 100ms;
 }
 .menu__txt {
-  margin-right: 20%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.menu h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu__price {
-  position: absolute;
-  right: 5%;
-  bottom: 10px;
+  align-self: flex-end;
+  padding-right: 10px;
   transition-duration: 300ms;
 }
 .menu h2 {
@@ -442,11 +457,10 @@ input[type=text] {
 
 .loadspinner {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .loadspinner__txt {
-  margin-left: 20px;
-  font-size: 60px;
+  font-size: 36px;
   animation: bounce 1s infinite;
 }
 .loadspinner__txt--1 {
@@ -465,28 +479,38 @@ input[type=text] {
 .loadspin {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 150px;
 }
 .loadspin__element {
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  margin-top: 50px;
-  margin-left: 30px;
-  animation: load 1s infinite;
+  width: 20%;
+  height: 15px;
+  margin-top: 30px;
+  animation: load 0.6s infinite;
 }
 .loadspin__element--1 {
   background-color: #99E2D0;
   animation-delay: 0s;
 }
 .loadspin__element--2 {
+  background-color: #99E2D0;
+  animation-delay: 0.1s;
+}
+.loadspin__element--3 {
+  background-color: #FF79DA;
+  animation-delay: 0.2s;
+}
+.loadspin__element--4 {
   background-color: #FF79DA;
   animation-delay: 0.3s;
 }
-.loadspin__element--3 {
+.loadspin__element--5 {
   background-color: #9356DC;
-  animation-delay: 0.6s;
+  animation-delay: 0.4s;
+}
+.loadspin__element--6 {
+  background-color: #9356DC;
+  animation-delay: 0.5s;
 }
 
 @keyframes menu {
