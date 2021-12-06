@@ -275,18 +275,6 @@ input[type=text] {
     }
 }
 
-@keyframes heart{
-    0% {
-        transform: scale(0);
-    }
-    75% {
-        transform: scale(1.8);
-    }
-    100%{
-        transform: scale(1.2);
-    }
-}
-
 .menu {
     background-color: $colour-background;
     padding-bottom: 80px;
@@ -319,12 +307,6 @@ input[type=text] {
             animation: heart 200ms forwards;
         }
     }
-    .heartfull {
-        background: -webkit-linear-gradient($colour-primary, $colour-secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transform: scale(0);
-    }
     &__bloc {
         width: 90%;
         margin: auto;
@@ -333,58 +315,62 @@ input[type=text] {
     }
     &__card {
         display: flex;
-        justify-content: space-between;
         position: relative;
-        padding: 12px;
+        justify-content: space-between;
+        overflow: hidden;
         margin: 15px 0px;
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 15px;
+        cursor: pointer;
         animation: menucard 400ms ease-out backwards;
         @for $i from 1 through 10 {
             &--#{$i} {
-                animation-delay: (150ms * $i);
+                animation-delay: (200ms * $i);
             }
         }
-        &::after {
-            width: 20%;
-            content: " ";
-            background-color: $colour-tertiary;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 80%;
-            transform: scale(0);
-            z-index: 1;
-            transition: 300ms;
-            transform-origin: right;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
+        &:hover .menu__check {
+            transform: translateX(0px);
         }
-        &:active::after {
-            transform: scale(1);
+        &:hover .menu__check--icon {
+            transform: rotate(270deg)
         }
-        &:active .menu__check {
-            opacity: 1;
-        }
-        &:active .menu__price {
-            transform: translateX(-80px);
-        }
-        &:active .menu__txt {
+        &:hover .menu__price {
             margin-right: 90px;
+        }
+        &:active .menu__check--icon {
+            animation: Check 200ms forwards;
         }
     }
     &__check {
-        font-size: 22px;
         position: absolute;
-        color: white;
-        right: 6%;
-        top: 35%;
-        z-index: 2;
-        opacity: 0;
-        transition-delay: 100ms;
+        right: 0%;
+        width: 80px;
+        height: 100%;
+        margin-right: -5px;
+        margin-bottom: -5px;
+        background-color: $colour-tertiary;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        transform: translateX(150px);
+        transition: 500ms;
+        text-align: center;
+        &--icon {
+            font-size: 22px;
+            margin-top: 25px;
+            rotate: 90deg;
+            color: white;
+            transition: 250ms 250ms;
+        }
+    }
+    &__price {
+        align-self: flex-end;
+        margin-right: 25px;
+        transition-duration: 500ms;
     }
     &__txt {
         overflow: hidden;
-        margin-right: 10px;
+        padding: 12px;
     }
     & h3 {
         overflow: hidden;
@@ -395,11 +381,6 @@ input[type=text] {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap
-    }
-    &__price {
-        align-self: flex-end;
-        padding-right: 10px;
-        transition-duration: 300ms;
     }
     & h2 {
         margin: 30px 0px 15px 0px;
@@ -420,6 +401,13 @@ input[type=text] {
     & button {
         margin-top: 50px;
     }
+}
+
+.heartfull {
+    background: -webkit-linear-gradient($colour-primary, $colour-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(0);
 }
 
 .loading {
@@ -537,3 +525,31 @@ input[type=text] {
       opacity: 0;
     }
   }
+
+@keyframes heart{
+    0% {
+        transform: scale(0);
+    }
+    75% {
+        transform: scale(1.8);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+@keyframes Check {
+    0% { 
+        transform: scale(1);
+        rotate: 360deg;
+    }
+    70% {
+        transform: scale(1.4);
+        color: $colour-secondary;
+        rotate: 360deg;
+    }
+    100% {
+        transform: scale(1);
+        color: $colour-secondary;
+        rotate: 360deg;
+    }
+}

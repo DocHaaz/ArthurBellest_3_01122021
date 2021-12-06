@@ -267,17 +267,6 @@ input[type=text] {
   margin-bottom: 25px;
 }
 
-@keyframes heart {
-  0% {
-    transform: scale(0);
-  }
-  75% {
-    transform: scale(1.8);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
 .menu {
   background-color: #F2F2F2;
   padding-bottom: 80px;
@@ -311,12 +300,6 @@ input[type=text] {
 .menu__heart:active + .heartfull {
   animation: heart 200ms forwards;
 }
-.menu .heartfull {
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(0);
-}
 .menu__bloc {
   width: 90%;
   margin: auto;
@@ -325,86 +308,87 @@ input[type=text] {
 }
 .menu__card {
   display: flex;
-  justify-content: space-between;
   position: relative;
-  padding: 12px;
+  justify-content: space-between;
+  overflow: hidden;
   margin: 15px 0px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 15px;
+  cursor: pointer;
   animation: menucard 400ms ease-out backwards;
 }
 .menu__card--1 {
-  animation-delay: 150ms;
+  animation-delay: 200ms;
 }
 .menu__card--2 {
-  animation-delay: 300ms;
+  animation-delay: 400ms;
 }
 .menu__card--3 {
-  animation-delay: 450ms;
-}
-.menu__card--4 {
   animation-delay: 600ms;
 }
+.menu__card--4 {
+  animation-delay: 800ms;
+}
 .menu__card--5 {
-  animation-delay: 750ms;
+  animation-delay: 1000ms;
 }
 .menu__card--6 {
-  animation-delay: 900ms;
-}
-.menu__card--7 {
-  animation-delay: 1050ms;
-}
-.menu__card--8 {
   animation-delay: 1200ms;
 }
+.menu__card--7 {
+  animation-delay: 1400ms;
+}
+.menu__card--8 {
+  animation-delay: 1600ms;
+}
 .menu__card--9 {
-  animation-delay: 1350ms;
+  animation-delay: 1800ms;
 }
 .menu__card--10 {
-  animation-delay: 1500ms;
+  animation-delay: 2000ms;
 }
-.menu__card::after {
-  width: 20%;
-  content: " ";
-  background-color: #99E2D0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 80%;
-  transform: scale(0);
-  z-index: 1;
-  transition: 300ms;
-  transform-origin: right;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+.menu__card:hover .menu__check {
+  transform: translateX(0px);
 }
-.menu__card:active::after {
-  transform: scale(1);
+.menu__card:hover .menu__check--icon {
+  transform: rotate(270deg);
 }
-.menu__card:active .menu__check {
-  opacity: 1;
-}
-.menu__card:active .menu__price {
-  transform: translateX(-80px);
-}
-.menu__card:active .menu__txt {
+.menu__card:hover .menu__price {
   margin-right: 90px;
 }
+.menu__card:active .menu__check--icon {
+  animation: Check 200ms forwards;
+}
 .menu__check {
-  font-size: 22px;
   position: absolute;
+  right: 0%;
+  width: 80px;
+  height: 100%;
+  margin-right: -5px;
+  margin-bottom: -5px;
+  background-color: #99E2D0;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  transform: translateX(150px);
+  transition: 500ms;
+  text-align: center;
+}
+.menu__check--icon {
+  font-size: 22px;
+  margin-top: 25px;
+  rotate: 90deg;
   color: white;
-  right: 6%;
-  top: 35%;
-  z-index: 2;
-  opacity: 0;
-  transition-delay: 100ms;
+  transition: 250ms 250ms;
+}
+.menu__price {
+  align-self: flex-end;
+  margin-right: 25px;
+  transition-duration: 500ms;
 }
 .menu__txt {
   overflow: hidden;
-  margin-right: 10px;
+  padding: 12px;
 }
 .menu h3 {
   overflow: hidden;
@@ -415,11 +399,6 @@ input[type=text] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-.menu__price {
-  align-self: flex-end;
-  padding-right: 10px;
-  transition-duration: 300ms;
 }
 .menu h2 {
   margin: 30px 0px 15px 0px;
@@ -439,6 +418,13 @@ input[type=text] {
 }
 .menu button {
   margin-top: 50px;
+}
+
+.heartfull {
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
 }
 
 .loading {
@@ -550,6 +536,33 @@ input[type=text] {
   }
   50% {
     opacity: 0;
+  }
+}
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes Check {
+  0% {
+    transform: scale(1);
+    rotate: 360deg;
+  }
+  70% {
+    transform: scale(1.4);
+    color: #FF79DA;
+    rotate: 360deg;
+  }
+  100% {
+    transform: scale(1);
+    color: #FF79DA;
+    rotate: 360deg;
   }
 }
 
