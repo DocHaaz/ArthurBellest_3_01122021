@@ -1,3 +1,85 @@
+/* Variables */
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
+$colour-molten: linear-gradient($colour-secondary, $colour-primary);
+$colour-background: #F2F2F2;
+$colour-footer: #232323;
+$colour-search: #e8e8e8;
+$colour-white: #FFFFFF;
+$colour-black: #000000;
+$font-main: Roboto;
+$font-secondary: Roboto-thin;
+$font-logo: Shrikhand;
+$box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+$box-shadow-bold: rgba(0, 0, 0, 0.24) 2px 5px 4px;
+/* Variables end */
+
+/* Keyframes */
+@keyframes menu{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes menucard{
+    0% {
+        transform: translateX(-1500%);
+    }    
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(1500%);
+    }
+}
+
+@keyframes load {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+@keyframes heart{
+    0% {
+        transform: scale(0);
+    }
+    75% {
+        transform: scale(1.8);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+@keyframes Check {
+    0% { 
+        transform:  scale(1);
+    }
+    70% {
+        transform: scale(1.4);
+        color: $colour-secondary;
+    }
+    100% {
+        transform: scale(1);
+        color: $colour-secondary;
+    }
+}
+/* Kayframes end */

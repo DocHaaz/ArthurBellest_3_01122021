@@ -1,4 +1,30 @@
-.fa-arrow-left {
-    font-size: 26px;
-    opacity: 0.8;
+/* button */
+button {
+    font-family: $font-main;
+    width: 220px;
+    height: 50px;
+    font-size: 14px;
+    border: 0px;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+    color: $colour-white;
+    background: $colour-molten;
+    transition-duration: 300ms;
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    &:hover {
+        opacity: 0.8;
+        box-shadow: $box-shadow-bold;
+    }
 }
+/* button end */
+
+/* button heart */
+.heartfull {
+    background: -webkit-linear-gradient($colour-primary, $colour-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(0);
+}
+/* button heart end */

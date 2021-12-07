@@ -4,12 +4,45 @@
 }
 @font-face {
     font-family: Roboto;
-    src: url(../Font/Roboto-Regular.ttf);
+    src: url(../Font/Roboto-Medium.ttf);
 }
+@font-face {
+    font-family: Roboto-thin;
+    src: url(../Font/Roboto-Light.ttf);
+}
+
 
 body {
     width: 100%;
     margin: auto;
     box-sizing: border-box;
-    font-family: Roboto;
+    font-family: $font-main;
+}
+
+a {
+    text-decoration: none;
+    color: $colour-black;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0%;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0%;
+}
+h3 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+    font-family: $font-secondary;
+    margin: 0%;
+}
+
+.fa-heart {
+    font-size: 28px;
 }

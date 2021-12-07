@@ -1,18 +1,254 @@
-/* Menu */
-.header {
-    &__arrow {
-        position: absolute;
-        left: 10%;
-        margin-top: 28px;
+/* Index */
+.company {
+    background-color: $colour-background;
+    padding: 20px 0px 50px 0px;
+    text-align: center;
+    & h1 {
+        padding: 10px 60px;
+    }
+    & p {
+        padding: 20px 20px;
+        opacity: 0.6;
     }
 }
 
-.menu {
-    &__heading {
-        font-family: Shrikhand;
+.running {
+    margin: 10% 5%;
+    &__bloc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        margin: 20px 0px;
+        box-shadow: $box-shadow;
+        border-radius: 15px;
+        position: relative;
+        background-color: $colour-background;
+        &::before {
+            content: " ";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            box-shadow: $box-shadow-bold;
+            background: lighten($color: $colour-primary, $amount: 35%);
+            opacity: 0;
+            z-index: 0;
+            transition: 100ms;
+            border-radius: 15px;
+        }
+        &:hover::before {
+            opacity: 1;
+        }
+        &:hover .running__icon {
+            color: $colour-primary;
+            opacity: 1;
+        }
+    }
+    &__number {
+        position: absolute;
+        font-size: 12px;
+        left: -8px;
+        padding: 4px 8px;
+        border-radius: 100%;
+        color: $colour-white;
+        background-color: $colour-primary;
+    }
+    &__icon {
+        text-align: center;
+        font-size: 20px;
+        width: 25px;
+        position: absolute;
+        opacity: 0.6;
+        left: 10%;
+    }
+    & p {
+        font-family: $font-main;
+        z-index: 1;
+    }
+}
+
+.restaurant {
+    padding: 10% 5%;
+    background-color: $colour-background;
+    &__card {
+        position: relative;
+        margin-bottom: 20px;
+        box-shadow: $box-shadow;
+        border-radius: 15px;
     }
     &__img {
         object-fit: cover;
         width: 100%;
+        height: 200px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    &__new {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        padding: 6px 12px;
+        border-radius: 2px;
+        background-color: $colour-tertiary;
+        font-size: 12px;
+        font-family: $font-main;
+        color: darken($color: $colour-tertiary, $amount: 50%);
+    }
+    &__txt {
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        margin-top: -5px;
+        text-align: start;
+        background-color: $colour-white;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        & h3 {
+            margin:  15px 0% 5px 0%;
+        }
+        & p {
+            margin: 0% 0% 15px 0%;
+        }
+    }
+    &__heart {
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        &:active + .heartfull {
+            animation: heart 200ms forwards;
+        }
+    }
+    & h2 {
+        margin-bottom: 25px;
+    }
+}
+/* fin Index */
+
+/* Menu */
+.menu {
+    background-color: $colour-background;
+    padding-bottom: 80px;
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 30px;
+        padding-left: 4%;
+        margin-top: -50px;
+        text-align: start;
+        position: relative;
+        background-color: $colour-background;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+    }
+    &__heading {
+        font-family: $font-logo;
+        font-size: 26px;
+    }
+    &__heart {
+        position: absolute;
+        right: 6%;
+        &:active + .heartfull {
+            animation: heart 200ms forwards;
+        }
+    }
+    &__bloc {
+        width: 90%;
+        margin: auto;
+        animation: menu 600ms 200ms backwards;
+        transform-origin: top left;
+    }
+    &__card {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        overflow: hidden;
+        margin: 15px 0px;
+        background-color: $colour-white;
+        box-shadow: $box-shadow;
+        border-radius: 15px;
+        cursor: pointer;
+        animation: menucard 400ms ease-out backwards;
+        @for $i from 1 through 10 {
+            &--#{$i} {
+                animation-delay: (200ms * $i);
+            }
+        }
+        &:hover .menu__check {
+            transform: translateX(0px);
+        }
+        &:hover .menu__check--icon {
+            transform: rotate(360deg)
+        }
+        &:hover .menu__price {
+            margin-right: 90px;
+        }
+        &:active .menu__check--icon {
+            animation: Check 200ms forwards;
+        }
+    }
+    &__check {
+        position: absolute;
+        right: 0%;
+        width: 80px;
+        height: 100%;
+        margin-right: -5px;
+        margin-bottom: -5px;
+        background-color: $colour-tertiary;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        transform: translateX(150px);
+        transition: 600ms;
+        text-align: center;
+        &--icon {
+            font-size: 22px;
+            margin-top: 22px;
+            color: $colour-white;
+            transition: 350ms 180ms;
+        }
+    }
+    &__price {
+        align-self: flex-end;
+        margin-right: 25px;
+        margin-bottom: 12px;
+        transition-duration: 600ms;
+    }
+    &__txt {
+        overflow: hidden;
+        padding: 12px;
+    }
+    & h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: auto;
+    }
+    & p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+    & h2 {
+        margin: 30px 0px 15px 0px;
+        font-family: $font-secondary;
+        font-weight: 400;
+        text-transform: uppercase;
+        display: inline-block;
+        position: relative;
+        &:after {
+            content: "";
+            width: 50px;
+            border-bottom: 3px solid $colour-tertiary;
+            position: absolute;
+            bottom: -8px;
+            left: 0%;
+        }
+    }
+    & button {
+        margin-top: 50px;
     }
 }

@@ -1,3 +1,68 @@
+/* Variables */
+/* Variables end */
+/* Keyframes */
+@keyframes menu {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes menucard {
+  0% {
+    transform: translateX(-1500%);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(1500%);
+  }
+}
+@keyframes load {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes Check {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.4);
+    color: #FF79DA;
+  }
+  100% {
+    transform: scale(1);
+    color: #FF79DA;
+  }
+}
+/* Kayframes end */
 @font-face {
   font-family: Shrikhand;
   src: url(../Font/Shrikhand-Regular.ttf);
@@ -19,36 +84,36 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0%;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0%;
 }
 
 h3 {
-  font-size: 16px;
-  margin: 0px 0px 5px 0px;
+  font-size: 18px;
 }
 
 p {
-  font-size: 14px;
-  font-family: roboto-thin;
+  font-size: 16px;
+  font-family: Roboto-thin;
   margin: 0%;
 }
 
 .fa-heart {
-  font-size: 25px;
+  font-size: 28px;
 }
 
+/* button */
 button {
-  font-family: roboto;
+  font-family: Roboto;
   width: 220px;
   height: 50px;
   font-size: 14px;
@@ -56,7 +121,7 @@ button {
   border-radius: 30px;
   display: block;
   margin: auto;
-  color: white;
+  color: #FFFFFF;
   background: linear-gradient(#FF79DA, #9356DC);
   transition-duration: 300ms;
   cursor: pointer;
@@ -67,6 +132,17 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 2px 5px 4px;
 }
 
+/* button end */
+/* button heart */
+.heartfull {
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+}
+
+/* button heart end */
+/* header */
 .header {
   width: 100%;
   position: relative;
@@ -74,24 +150,29 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .header__logo {
-  width: 180px;
+  width: 200px;
   margin: 24px 0px 12px 0px;
 }
 .header__arrow {
   position: absolute;
-  left: 10%;
+  left: 6%;
   margin-top: 28px;
+  font-size: 26px;
+  opacity: 0.8;
 }
 
+/* fin header */
+/* footer */
 .footer {
-  color: white;
+  color: #FFFFFF;
   background-color: #232323;
   padding: 10px 0px;
 }
 .footer__logo {
   font-family: Shrikhand;
-  font-size: 20px;
+  font-size: 28px;
   padding-left: 40px;
+  margin: 0px 0px 5px 0px;
 }
 .footer__icon {
   width: 20px;
@@ -102,17 +183,91 @@ button:hover {
 }
 .footer__list li {
   line-height: 2;
-  font-family: roboto-thin;
+  font-family: Roboto-thin;
+  font-size: 18px;
 }
 .footer__list a {
-  color: white;
+  color: #FFFFFF;
 }
 
-.fa-arrow-left {
-  font-size: 26px;
-  opacity: 0.8;
+/* fin footer */
+/* loading spinner */
+.loadspinner {
+  z-index: 99999;
+  background-color: #FFFFFF;
+  font-family: Shrikhand;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  cursor: wait;
+  animation: loading 0.1ms 4s forwards;
 }
 
+.loading {
+  display: flex;
+  justify-content: space-evenly;
+}
+.loading__txt {
+  font-size: 36px;
+  animation: bounce 1s infinite;
+}
+.loading__txt--1 {
+  color: #9356DC;
+  animation-delay: 0s;
+}
+.loading__txt--2 {
+  color: #FF79DA;
+  animation-delay: 0.1s;
+}
+.loading__txt--3 {
+  color: #99E2D0;
+  animation-delay: 0.2s;
+}
+
+.loadspin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 150px;
+}
+.loadspin__element {
+  width: 20%;
+  height: 15px;
+  margin-top: 30px;
+  animation: load 0.6s infinite;
+}
+.loadspin__element--1 {
+  background-color: #99E2D0;
+  animation-delay: 0s;
+}
+.loadspin__element--2 {
+  background-color: #99E2D0;
+  animation-delay: 0.1s;
+}
+.loadspin__element--3 {
+  background-color: #FF79DA;
+  animation-delay: 0.2s;
+}
+.loadspin__element--4 {
+  background-color: #FF79DA;
+  animation-delay: 0.3s;
+}
+.loadspin__element--5 {
+  background-color: #9356DC;
+  animation-delay: 0.4s;
+}
+.loadspin__element--6 {
+  background-color: #9356DC;
+  animation-delay: 0.5s;
+}
+
+/* loading spinner ending */
+/* localisation */
 .tracking {
   background-color: #e8e8e8;
   text-align: center;
@@ -121,9 +276,9 @@ button:hover {
 input[type=text] {
   width: 120px;
   background-color: #e8e8e8;
-  color: black;
-  border: lightgray;
-  padding: 14px 14px;
+  color: #000000;
+  border: #e8e8e8;
+  padding: 20px 16px;
 }
 
 .fa-map-marker-alt {
@@ -131,12 +286,14 @@ input[type=text] {
 }
 
 #placesearch::placeholder {
-  color: black;
+  color: #000000;
   opacity: 0.8;
   font-size: 14px;
-  font-family: roboto;
+  font-family: Roboto;
 }
 
+/* fin localisation */
+/* Index */
 .company {
   background-color: #F2F2F2;
   padding: 20px 0px 50px 0px;
@@ -191,17 +348,19 @@ input[type=text] {
   left: -8px;
   padding: 4px 8px;
   border-radius: 100%;
-  color: white;
+  color: #FFFFFF;
   background-color: #9356DC;
 }
 .running__icon {
-  font-size: 18px;
+  text-align: center;
+  font-size: 20px;
+  width: 25px;
   position: absolute;
   opacity: 0.6;
-  left: 12%;
+  left: 10%;
 }
 .running p {
-  font-family: roboto;
+  font-family: Roboto;
   z-index: 1;
 }
 
@@ -230,7 +389,7 @@ input[type=text] {
   border-radius: 2px;
   background-color: #99E2D0;
   font-size: 12px;
-  font-family: roboto;
+  font-family: Roboto;
   color: #1b6150;
 }
 .restaurant__txt {
@@ -243,7 +402,7 @@ input[type=text] {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.restaurant__txt h4 {
+.restaurant__txt h3 {
   margin: 15px 0% 5px 0%;
 }
 .restaurant__txt p {
@@ -257,16 +416,12 @@ input[type=text] {
 .restaurant__heart:active + .heartfull {
   animation: heart 200ms forwards;
 }
-.restaurant .heartfull {
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(0);
-}
 .restaurant h2 {
   margin-bottom: 25px;
 }
 
+/* fin Index */
+/* Menu */
 .menu {
   background-color: #F2F2F2;
   padding-bottom: 80px;
@@ -312,7 +467,7 @@ input[type=text] {
   justify-content: space-between;
   overflow: hidden;
   margin: 15px 0px;
-  background-color: white;
+  background-color: #FFFFFF;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 15px;
   cursor: pointer;
@@ -352,7 +507,7 @@ input[type=text] {
   transform: translateX(0px);
 }
 .menu__card:hover .menu__check--icon {
-  transform: rotate(270deg);
+  transform: rotate(360deg);
 }
 .menu__card:hover .menu__price {
   margin-right: 90px;
@@ -371,20 +526,20 @@ input[type=text] {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   transform: translateX(150px);
-  transition: 500ms;
+  transition: 600ms;
   text-align: center;
 }
 .menu__check--icon {
   font-size: 22px;
-  margin-top: 25px;
-  rotate: 90deg;
-  color: white;
-  transition: 250ms 250ms;
+  margin-top: 22px;
+  color: #FFFFFF;
+  transition: 350ms 180ms;
 }
 .menu__price {
   align-self: flex-end;
   margin-right: 25px;
-  transition-duration: 500ms;
+  margin-bottom: 12px;
+  transition-duration: 600ms;
 }
 .menu__txt {
   overflow: hidden;
@@ -394,6 +549,7 @@ input[type=text] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin: auto;
 }
 .menu p {
   overflow: hidden;
@@ -402,7 +558,7 @@ input[type=text] {
 }
 .menu h2 {
   margin: 30px 0px 15px 0px;
-  font-family: roboto-thin;
+  font-family: Roboto-thin;
   font-weight: 400;
   text-transform: uppercase;
   display: inline-block;
@@ -418,152 +574,6 @@ input[type=text] {
 }
 .menu button {
   margin-top: 50px;
-}
-
-.heartfull {
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(0);
-}
-
-.loading {
-  z-index: 99999;
-  background-color: white;
-  font-family: Shrikhand;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  cursor: wait;
-  animation: loading 0.1ms 4s forwards;
-}
-
-.loadspinner {
-  display: flex;
-  justify-content: space-evenly;
-}
-.loadspinner__txt {
-  font-size: 36px;
-  animation: bounce 1s infinite;
-}
-.loadspinner__txt--1 {
-  color: #9356DC;
-  animation-delay: 0s;
-}
-.loadspinner__txt--2 {
-  color: #FF79DA;
-  animation-delay: 0.1s;
-}
-.loadspinner__txt--3 {
-  color: #99E2D0;
-  animation-delay: 0.2s;
-}
-
-.loadspin {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  height: 150px;
-}
-.loadspin__element {
-  width: 20%;
-  height: 15px;
-  margin-top: 30px;
-  animation: load 0.6s infinite;
-}
-.loadspin__element--1 {
-  background-color: #99E2D0;
-  animation-delay: 0s;
-}
-.loadspin__element--2 {
-  background-color: #99E2D0;
-  animation-delay: 0.1s;
-}
-.loadspin__element--3 {
-  background-color: #FF79DA;
-  animation-delay: 0.2s;
-}
-.loadspin__element--4 {
-  background-color: #FF79DA;
-  animation-delay: 0.3s;
-}
-.loadspin__element--5 {
-  background-color: #9356DC;
-  animation-delay: 0.4s;
-}
-.loadspin__element--6 {
-  background-color: #9356DC;
-  animation-delay: 0.5s;
-}
-
-@keyframes menu {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes menucard {
-  0% {
-    transform: translateX(-1500%);
-  }
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-40px);
-  }
-}
-@keyframes loading {
-  0% {
-    transform: translate(0%);
-  }
-  100% {
-    transform: translate(1500%);
-  }
-}
-@keyframes load {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-@keyframes heart {
-  0% {
-    transform: scale(0);
-  }
-  75% {
-    transform: scale(1.8);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
-@keyframes Check {
-  0% {
-    transform: scale(1);
-    rotate: 360deg;
-  }
-  70% {
-    transform: scale(1.4);
-    color: #FF79DA;
-    rotate: 360deg;
-  }
-  100% {
-    transform: scale(1);
-    color: #FF79DA;
-    rotate: 360deg;
-  }
 }
 
 /*# sourceMappingURL=Style.css.map */

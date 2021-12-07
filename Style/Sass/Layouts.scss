@@ -1,10 +1,151 @@
+/* header */
 .header {
     width: 100%;
     position: relative;
     text-align: center;
-    box-shadow: black 5px 0px 4px, #F2F2F2 -1px 0px 0px;
+    box-shadow: $box-shadow;
     &__logo {
         width: 200px;
         margin: 24px 0px 12px 0px;
     }
+    &__arrow {
+        position: absolute;
+        left: 6%;
+        margin-top: 28px;
+        font-size: 26px;
+        opacity: 0.8;
+    }
 }
+/* fin header */
+
+/* footer */
+.footer {
+    color: $colour-white;
+    background-color: $colour-footer;
+    padding: 10px 0px;
+    &__logo {
+        font-family: $font-logo;
+        font-size: 28px;
+        padding-left: 40px;
+        margin: 0px 0px 5px 0px;
+    }
+    &__icon {
+        width: 20px;
+        margin-right: 8px;
+    }
+    &__list {
+        list-style-type: none;
+        & li {
+            line-height: 2;
+            font-family: $font-secondary;
+            font-size: 18px;
+        }
+        & a {
+            color: $colour-white;
+        }
+    }
+}
+/* fin footer */
+
+/* loading spinner */
+.loadspinner {
+    z-index: 99999;
+    background-color: $colour-white;
+    font-family: $font-logo;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    cursor: wait;
+    animation: loading 0.1ms 4s forwards;
+}
+
+.loading {
+    display: flex;
+    justify-content: space-evenly;
+    &__txt {
+        font-size: 36px;
+        animation: bounce 1s infinite;
+        &--1 {
+            color: $colour-primary;
+            animation-delay: 0s;
+        }
+        &--2 {
+            color: $colour-secondary;
+            animation-delay: 0.1s;
+        }
+        &--3 {
+            color: $colour-tertiary;
+            animation-delay: 0.2s;
+        }
+    }
+}
+
+.loadspin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 150px;
+    &__element {
+        width: 20%;
+        height: 15px;
+        margin-top: 30px;
+        animation: load 0.6s infinite;
+        &--1 {
+            background-color: $colour-tertiary;
+            animation-delay: 0s;
+        }
+        &--2 {
+            background-color: $colour-tertiary;
+            animation-delay: 0.1s;
+        }
+        &--3 {
+            background-color: $colour-secondary;
+            animation-delay: 0.2s;
+        } 
+        &--4 {
+            background-color: $colour-secondary;
+            animation-delay: 0.3s;
+        }
+        &--5 {
+            background-color: $colour-primary;
+            animation-delay: 0.4s;
+        }
+        &--6 {
+            background-color: $colour-primary;
+            animation-delay: 0.5s;
+        } 
+    }
+    
+}
+/* loading spinner ending */
+
+/* localisation */
+.tracking {
+    background-color: $colour-search;
+    text-align: center;
+}
+
+input[type=text] {
+    width: 120px;
+    background-color: $colour-search;
+    color: $colour-black;
+    border: $colour-search;
+    padding: 20px 16px
+}
+
+.fa-map-marker-alt {
+    opacity: 0.8;
+}
+
+#placesearch::placeholder {
+    color: $colour-black;
+    opacity: 0.8;
+    font-size: 14px;
+    font-family: $font-main;
+}
+/* fin localisation */
