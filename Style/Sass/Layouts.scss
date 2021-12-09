@@ -8,12 +8,17 @@
         width: 200px;
         margin: 24px 0px 12px 0px;
     }
-    &__arrow {
+    &__home {
         position: absolute;
         left: 6%;
         margin-top: 28px;
+    }
+    &__arrow {
         font-size: 26px;
         opacity: 0.8;
+    }
+    &__txt {
+        visibility: hidden;
     }
 }
 /* fin header */
@@ -66,7 +71,8 @@
 
 .loading {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    column-gap: 36px;
     &__txt {
         font-size: 36px;
         animation: bounce 1s infinite;
@@ -87,8 +93,6 @@
 
 .loadspin {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     height: 150px;
     &__element {
         width: 20%;

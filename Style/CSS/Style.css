@@ -82,6 +82,10 @@ body {
   font-family: Roboto;
 }
 
+.RestaurantpPage {
+  background-color: #F2F2F2;
+}
+
 a {
   text-decoration: none;
   color: #000000;
@@ -137,6 +141,7 @@ button:hover {
 .heartfull {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0);
 }
@@ -153,12 +158,17 @@ button:hover {
   width: 200px;
   margin: 24px 0px 12px 0px;
 }
-.header__arrow {
+.header__home {
   position: absolute;
   left: 6%;
   margin-top: 28px;
+}
+.header__arrow {
   font-size: 26px;
   opacity: 0.8;
+}
+.header__txt {
+  visibility: hidden;
 }
 
 /* fin header */
@@ -210,7 +220,8 @@ button:hover {
 
 .loading {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  column-gap: 36px;
 }
 .loading__txt {
   font-size: 36px;
@@ -231,8 +242,6 @@ button:hover {
 
 .loadspin {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   height: 150px;
 }
 .loadspin__element {
@@ -304,6 +313,7 @@ input[type=text] {
 }
 .company p {
   padding: 20px 20px;
+  margin-bottom: 20px;
   opacity: 0.6;
 }
 
@@ -574,6 +584,87 @@ input[type=text] {
 }
 .menu button {
   margin-top: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .header__home {
+    position: absolute;
+    left: 6%;
+    margin-top: 28px;
+  }
+  .header__arrow {
+    font-size: 18px;
+    opacity: 1;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  .header__txt {
+    visibility: visible;
+    position: absolute;
+    font-size: 20px;
+    font-family: Shrikhand;
+  }
+
+  .running h2 {
+    margin-bottom: 20px;
+  }
+  .running__bloc {
+    height: 80px;
+  }
+  .running__icon {
+    left: 18%;
+  }
+
+  .menu__img {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .loadspin {
+    margin: 0px auto;
+    width: 400px;
+  }
+  .loadspin__element {
+    height: 20px;
+  }
+
+  .company {
+    width: 600px;
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .running {
+    width: 65%;
+    max-width: 1000px;
+    margin: 80px auto;
+  }
+
+  .restaurant {
+    padding: 50px 10%;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px 5%;
+  }
+  .restaurant__card {
+    width: 45%;
+    max-width: 500px;
+    height: 300px;
+  }
+  .restaurant__img {
+    height: 250px;
+  }
+  .restaurant__heart {
+    bottom: 3%;
+  }
+  .restaurant h2 {
+    width: 100%;
+    margin-bottom: 0%;
+  }
 }
 
 /*# sourceMappingURL=Style.css.map */
