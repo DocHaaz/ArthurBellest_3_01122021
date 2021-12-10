@@ -29,6 +29,11 @@
             left: 18%;
         }
     }
+    .restaurantpage {
+        &__heart {
+            font-size: 32px;
+        }
+    }
     .menu {
         &__img {
         height: 350px;
@@ -36,19 +41,17 @@
         &__header {
             padding-bottom: 80px;
         }
-        &__heart {
-            position: static;
-            margin-left: 25px;
-        }
     }
 }
 
 @media screen and (min-width:1200px) {
-    .loadspin {
-        margin: 0px auto;
-        width: 400px;
-        &__element {
-            height: 20px;
+    .loadspinner {
+        &__color {
+            margin: 0px auto;
+            width: 400px;
+            &__element {
+                height: 20px;
+            }
         }
     }
     .company {
@@ -91,6 +94,18 @@
             font-size: 16px;
         }
     }
+    .restaurantpage {
+        &__header {
+            margin-top: 0%;
+        }
+        &__img {
+            height: 300px;
+            object-position: 50% 55%;
+        }
+        &__heart {
+            font-size: 38px;
+        }
+    }
     .menu {
         display: flex;
         padding-left: 1%;
@@ -99,13 +114,6 @@
             width: 32%;
             max-width: 450px;
             margin: 0% auto
-        }
-        &__header {
-            margin-top: 0%;
-        }
-        &__img {
-            height: 300px;
-            object-position: 50% 55%;
         }
     }
 }

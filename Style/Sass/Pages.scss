@@ -111,12 +111,8 @@
         }
     }
     &__heart {
-        position: absolute;
         bottom: 10%;
         right: 5%;
-        &:active + .heartfull {
-            animation: heart 200ms forwards;
-        }
     }
     & h2 {
         margin-bottom: 25px;
@@ -125,8 +121,9 @@
 /* fin Index */
 
 /* Menu */
-.menu {
-    padding-bottom: 80px;
+.restaurantpage {
+    background-color: $colour-background;
+    padding-bottom: 60px;
     &__img {
         object-fit: cover;
         width: 100%;
@@ -148,12 +145,12 @@
         font-size: 26px;
     }
     &__heart {
-        position: absolute;
         right: 6%;
-        &:active + .heartfull {
-            animation: heart 200ms forwards;
-        }
     }
+}
+
+.menu {
+    padding-bottom: 80px;
     &__bloc {
         width: 90%;
         margin: auto;

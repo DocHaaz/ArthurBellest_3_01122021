@@ -67,64 +67,61 @@
     width: 100%;
     cursor: wait;
     animation: loading 0.1ms 4s forwards;
-}
-
-.loading {
-    display: flex;
-    justify-content: center;
-    column-gap: 36px;
     &__txt {
-        font-size: 36px;
-        animation: bounce 1s infinite;
-        &--1 {
-            color: $colour-primary;
-            animation-delay: 0s;
-        }
-        &--2 {
-            color: $colour-secondary;
-            animation-delay: 0.1s;
-        }
-        &--3 {
-            color: $colour-tertiary;
-            animation-delay: 0.2s;
+        display: flex;
+        justify-content: center;
+        column-gap: 36px;
+        &__element {
+            font-size: 36px;
+            animation: bounce 1s infinite;
+            &--1 {
+                color: $colour-primary;
+                animation-delay: 0s;
+            }
+            &--2 {
+                color: $colour-secondary;
+                animation-delay: 0.1s;
+            }
+            &--3 {
+                color: $colour-tertiary;
+                animation-delay: 0.2s;
+            }
         }
     }
-}
-
-.loadspin {
-    display: flex;
-    height: 150px;
-    &__element {
-        width: 20%;
-        height: 15px;
-        margin-top: 30px;
-        animation: load 0.6s infinite;
-        &--1 {
-            background-color: $colour-tertiary;
-            animation-delay: 0s;
+    &__color {
+        display: flex;
+        height: 150px;
+        &__element {
+            width: 20%;
+            height: 15px;
+            margin-top: 30px;
+            animation: load 0.6s infinite;
+            &--1 {
+                background-color: $colour-tertiary;
+                animation-delay: 0s;
+            }
+            &--2 {
+                background-color: $colour-tertiary;
+                animation-delay: 0.1s;
+            }
+            &--3 {
+                background-color: $colour-secondary;
+                animation-delay: 0.2s;
+            } 
+            &--4 {
+                background-color: $colour-secondary;
+                animation-delay: 0.3s;
+            }
+            &--5 {
+                background-color: $colour-primary;
+                animation-delay: 0.4s;
+            }
+            &--6 {
+                background-color: $colour-primary;
+                animation-delay: 0.5s;
+            } 
         }
-        &--2 {
-            background-color: $colour-tertiary;
-            animation-delay: 0.1s;
-        }
-        &--3 {
-            background-color: $colour-secondary;
-            animation-delay: 0.2s;
-        } 
-        &--4 {
-            background-color: $colour-secondary;
-            animation-delay: 0.3s;
-        }
-        &--5 {
-            background-color: $colour-primary;
-            animation-delay: 0.4s;
-        }
-        &--6 {
-            background-color: $colour-primary;
-            animation-delay: 0.5s;
-        } 
     }
-    
 }
 /* loading spinner ending */
 

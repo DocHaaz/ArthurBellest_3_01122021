@@ -21,6 +21,12 @@ button {
 /* button end */
 
 /* button heart */
+.heart {
+    position: absolute;
+    &:active + .heartfull {
+        animation: heart 200ms forwards;
+    }
+}
 .heartfull {
     background: -webkit-linear-gradient($colour-primary, $colour-secondary);
     -webkit-background-clip: text;

@@ -112,11 +112,6 @@ p {
   font-size: 28px;
 }
 
-main {
-  background-color: #F2F2F2;
-  padding-bottom: 60px;
-}
-
 /* button */
 button {
   font-family: Roboto;
@@ -140,6 +135,13 @@ button:hover {
 
 /* button end */
 /* button heart */
+.heart {
+  position: absolute;
+}
+.heart:active + .heartfull {
+  animation: heart 200ms forwards;
+}
+
 .heartfull {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
@@ -219,60 +221,58 @@ button:hover {
   cursor: wait;
   animation: loading 0.1ms 4s forwards;
 }
-
-.loading {
+.loadspinner__txt {
   display: flex;
   justify-content: center;
   column-gap: 36px;
 }
-.loading__txt {
+.loadspinner__txt__element {
   font-size: 36px;
   animation: bounce 1s infinite;
 }
-.loading__txt--1 {
+.loadspinner__txt__element--1 {
   color: #9356DC;
   animation-delay: 0s;
 }
-.loading__txt--2 {
+.loadspinner__txt__element--2 {
   color: #FF79DA;
   animation-delay: 0.1s;
 }
-.loading__txt--3 {
+.loadspinner__txt__element--3 {
   color: #99E2D0;
   animation-delay: 0.2s;
 }
-
-.loadspin {
+.loadspinner__color {
   display: flex;
   height: 150px;
 }
-.loadspin__element {
+.loadspinner__color__element {
   width: 20%;
   height: 15px;
   margin-top: 30px;
   animation: load 0.6s infinite;
 }
-.loadspin__element--1 {
+.loadspinner__color__element--1 {
   background-color: #99E2D0;
   animation-delay: 0s;
 }
-.loadspin__element--2 {
+.loadspinner__color__element--2 {
   background-color: #99E2D0;
   animation-delay: 0.1s;
 }
-.loadspin__element--3 {
+.loadspinner__color__element--3 {
   background-color: #FF79DA;
   animation-delay: 0.2s;
 }
-.loadspin__element--4 {
+.loadspinner__color__element--4 {
   background-color: #FF79DA;
   animation-delay: 0.3s;
 }
-.loadspin__element--5 {
+.loadspinner__color__element--5 {
   background-color: #9356DC;
   animation-delay: 0.4s;
 }
-.loadspin__element--6 {
+.loadspinner__color__element--6 {
   background-color: #9356DC;
   animation-delay: 0.5s;
 }
@@ -421,12 +421,8 @@ input[type=text] {
   margin: 0% 0% 15px 0%;
 }
 .restaurant__heart {
-  position: absolute;
   bottom: 10%;
   right: 5%;
-}
-.restaurant__heart:active + .heartfull {
-  animation: heart 200ms forwards;
 }
 .restaurant h2 {
   margin-bottom: 25px;
@@ -434,15 +430,16 @@ input[type=text] {
 
 /* fin Index */
 /* Menu */
-.menu {
-  padding-bottom: 80px;
+.restaurantpage {
+  background-color: #F2F2F2;
+  padding-bottom: 60px;
 }
-.menu__img {
+.restaurantpage__img {
   object-fit: cover;
   width: 100%;
   height: 250px;
 }
-.menu__header {
+.restaurantpage__header {
   display: flex;
   padding-top: 30px;
   padding-bottom: 40px;
@@ -453,16 +450,16 @@ input[type=text] {
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
 }
-.menu__heading {
+.restaurantpage__heading {
   font-family: Shrikhand;
   font-size: 26px;
 }
-.menu__heart {
-  position: absolute;
+.restaurantpage__heart {
   right: 6%;
 }
-.menu__heart:active + .heartfull {
-  animation: heart 200ms forwards;
+
+.menu {
+  padding-bottom: 80px;
 }
 .menu__bloc {
   width: 90%;
@@ -614,23 +611,23 @@ input[type=text] {
     left: 18%;
   }
 
+  .restaurantpage__heart {
+    font-size: 32px;
+  }
+
   .menu__img {
     height: 350px;
   }
   .menu__header {
     padding-bottom: 80px;
   }
-  .menu__heart {
-    position: static;
-    margin-left: 25px;
-  }
 }
 @media screen and (min-width: 1200px) {
-  .loadspin {
+  .loadspinner__color {
     margin: 0px auto;
     width: 400px;
   }
-  .loadspin__element {
+  .loadspinner__color__element {
     height: 20px;
   }
 
@@ -677,6 +674,17 @@ input[type=text] {
     font-size: 16px;
   }
 
+  .restaurantpage__header {
+    margin-top: 0%;
+  }
+  .restaurantpage__img {
+    height: 300px;
+    object-position: 50% 55%;
+  }
+  .restaurantpage__heart {
+    font-size: 38px;
+  }
+
   .menu {
     display: flex;
     padding-left: 1%;
@@ -686,13 +694,6 @@ input[type=text] {
     width: 32%;
     max-width: 450px;
     margin: 0% auto;
-  }
-  .menu__header {
-    margin-top: 0%;
-  }
-  .menu__img {
-    height: 300px;
-    object-position: 50% 55%;
   }
 }
 
