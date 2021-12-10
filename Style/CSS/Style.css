@@ -12,6 +12,7 @@
 @keyframes menucard {
   0% {
     transform: translateX(-1500%);
+    opacity: 0;
   }
 }
 @keyframes bounce {
@@ -82,10 +83,6 @@ body {
   font-family: Roboto;
 }
 
-.RestaurantpPage {
-  background-color: #F2F2F2;
-}
-
 a {
   text-decoration: none;
   color: #000000;
@@ -113,6 +110,11 @@ p {
 
 .fa-heart {
   font-size: 28px;
+}
+
+main {
+  background-color: #F2F2F2;
+  padding-bottom: 60px;
 }
 
 /* button */
@@ -433,7 +435,6 @@ input[type=text] {
 /* fin Index */
 /* Menu */
 .menu {
-  background-color: #F2F2F2;
   padding-bottom: 80px;
 }
 .menu__img {
@@ -443,12 +444,10 @@ input[type=text] {
 }
 .menu__header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: 30px;
+  padding-bottom: 40px;
   padding-left: 4%;
   margin-top: -50px;
-  text-align: start;
   position: relative;
   background-color: #F2F2F2;
   border-top-left-radius: 35px;
@@ -618,8 +617,15 @@ input[type=text] {
   .menu__img {
     height: 350px;
   }
+  .menu__header {
+    padding-bottom: 80px;
+  }
+  .menu__heart {
+    position: static;
+    margin-left: 25px;
+  }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .loadspin {
     margin: 0px auto;
     width: 400px;
@@ -659,11 +665,34 @@ input[type=text] {
     height: 250px;
   }
   .restaurant__heart {
-    bottom: 3%;
+    bottom: -1%;
+    right: 8%;
   }
   .restaurant h2 {
     width: 100%;
     margin-bottom: 0%;
+  }
+  .restaurant__new {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .menu {
+    display: flex;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .menu__bloc {
+    width: 32%;
+    max-width: 450px;
+    margin: 0% auto;
+  }
+  .menu__header {
+    margin-top: 0%;
+  }
+  .menu__img {
+    height: 300px;
+    object-position: 50% 55%;
   }
 }
 

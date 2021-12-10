@@ -126,7 +126,6 @@
 
 /* Menu */
 .menu {
-    background-color: $colour-background;
     padding-bottom: 80px;
     &__img {
         object-fit: cover;
@@ -135,12 +134,10 @@
     }
     &__header {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding-top: 30px;
+        padding-bottom: 40px;
         padding-left: 4%;
         margin-top: -50px;
-        text-align: start;
         position: relative;
         background-color: $colour-background;
         border-top-left-radius: 35px;

@@ -33,10 +33,17 @@
         &__img {
         height: 350px;
         }
+        &__header {
+            padding-bottom: 80px;
+        }
+        &__heart {
+            position: static;
+            margin-left: 25px;
+        }
     }
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width:1200px) {
     .loadspin {
         margin: 0px auto;
         width: 400px;
@@ -72,11 +79,33 @@
             height: 250px;
         }
         &__heart {
-            bottom: 3%;
+            bottom: -1%;
+            right: 8%;
         }
         & h2 {
             width: 100%;
             margin-bottom: 0%;
+        }
+        &__new {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    }
+    .menu {
+        display: flex;
+        padding-left: 1%;
+        padding-right: 1%;
+        &__bloc {
+            width: 32%;
+            max-width: 450px;
+            margin: 0% auto
+        }
+        &__header {
+            margin-top: 0%;
+        }
+        &__img {
+            height: 300px;
+            object-position: 50% 55%;
         }
     }
 }
