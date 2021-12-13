@@ -14,15 +14,15 @@
 }
 
 .running {
-    margin: 10% 5%;
+    margin: 60px 25px;
     &__bloc {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 60px;
+        height: 70px;
         margin: 20px 0px;
         box-shadow: $box-shadow;
-        border-radius: 15px;
+        border-radius: 20px;
         position: relative;
         background-color: $colour-background;
         &::before {
@@ -34,7 +34,7 @@
             opacity: 0;
             z-index: 0;
             transition: 100ms;
-            border-radius: 15px;
+            border-radius: 20px;
         }
         &:hover::before {
             opacity: 1;
@@ -68,51 +68,51 @@
 }
 
 .restaurant {
-    padding: 10% 5%;
+    padding: 60px 5%;
     background-color: $colour-background;
     &__card {
         position: relative;
         margin-bottom: 20px;
         box-shadow: $box-shadow;
         border-radius: 15px;
-    }
-    &__img {
-        object-fit: cover;
-        width: 100%;
-        height: 200px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
-    &__new {
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        padding: 6px 12px;
-        border-radius: 2px;
-        background-color: $colour-tertiary;
-        font-size: 12px;
-        font-family: $font-main;
-        color: darken($color: $colour-tertiary, $amount: 50%);
-    }
-    &__txt {
-        display: flex;
-        flex-direction: column;
-        padding-left: 15px;
-        margin-top: -5px;
-        text-align: start;
-        background-color: $colour-white;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        & h3 {
-            margin:  15px 0% 5px 0%;
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 180px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
-        & p {
-            margin: 0% 0% 15px 0%;
+        &__new {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            padding: 6px 12px;
+            border-radius: 2px;
+            background-color: $colour-tertiary;
+            font-size: 12px;
+            font-family: $font-main;
+            color: darken($color: $colour-tertiary, $amount: 50%);
         }
-    }
-    &__heart {
-        bottom: 10%;
-        right: 5%;
+        &__txt {
+            display: flex;
+            flex-direction: column;
+            padding-left: 15px;
+            margin-top: -5px;
+            text-align: start;
+            background-color: $colour-white;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            & h3 {
+                margin:  15px 0% 5px 0%;
+            }
+            & p {
+                margin: 0% 0% 15px 0%;
+            }
+        }
+        &__heart {
+            bottom: 10%;
+            right: 5%;
+        }
     }
     & h2 {
         margin-bottom: 25px;
@@ -123,7 +123,7 @@
 /* Menu */
 .restaurantpage {
     background-color: $colour-background;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     &__img {
         object-fit: cover;
         width: 100%;
@@ -132,7 +132,7 @@
     &__header {
         display: flex;
         padding-top: 30px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         padding-left: 4%;
         margin-top: -50px;
         position: relative;
@@ -150,7 +150,7 @@
 }
 
 .menu {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     &__bloc {
         width: 90%;
         margin: auto;
@@ -173,59 +173,57 @@
                 animation-delay: (200ms * $i);
             }
         }
-        &:hover .menu__check {
+        &:active .menu__card__check {
             transform: translateX(0px);
         }
-        &:hover .menu__check--icon {
-            transform: rotate(360deg)
-        }
-        &:hover .menu__price {
+        &:active .menu__card__price {
             margin-right: 90px;
         }
-        &:active .menu__check--icon {
-            animation: Check 200ms forwards;
+        &:active .menu__card__check--icon {
+            transform: rotate(360deg);
+            animation: Check 200ms 500ms forwards;
         }
-    }
-    &__check {
-        position: absolute;
-        right: 0%;
-        width: 80px;
-        height: 100%;
-        margin-right: -5px;
-        margin-bottom: -5px;
-        background-color: $colour-tertiary;
-        border-bottom-right-radius: 15px;
-        border-top-right-radius: 15px;
-        transform: translateX(150px);
-        transition: 600ms;
-        text-align: center;
-        &--icon {
-            font-size: 22px;
-            margin-top: 22px;
-            color: $colour-white;
-            transition: 350ms 180ms;
+        &__check {
+            position: absolute;
+            right: 0%;
+            width: 80px;
+            height: 100%;
+            margin-right: -5px;
+            margin-bottom: -5px;
+            background-color: $colour-tertiary;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+            transform: translateX(150px);
+            transition: 600ms;
+            text-align: center;
+            &--icon {
+                font-size: 22px;
+                margin-top: 22px;
+                color: $colour-white;
+                transition: transform 350ms 180ms;
+            }
         }
-    }
-    &__price {
-        align-self: flex-end;
-        margin-right: 25px;
-        margin-bottom: 12px;
-        transition-duration: 600ms;
-    }
-    &__txt {
-        overflow: hidden;
-        padding: 12px;
-    }
-    & h3 {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin: auto;
-    }
-    & p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap
+        &__price {
+            align-self: flex-end;
+            margin-right: 25px;
+            margin-bottom: 12px;
+            transition-duration: 600ms;
+        }
+        &__txt {
+            overflow: hidden;
+            padding: 12px;
+        }
+        & h3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: auto;
+        }
+        & p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
     }
     & h2 {
         margin: 30px 0px 15px 0px;
@@ -245,5 +243,120 @@
     }
     & button {
         margin-top: 50px;
+    }
+}
+/* Responsive */
+@media screen and (min-width:768px) {
+    .running {
+        & h2 {
+            margin-bottom: 20px;
+        }
+        &__bloc {
+            height: 80px;
+        }
+        &__icon {
+            left: 18%;
+        }
+    }
+    .restaurantpage {
+        &__heart {
+            font-size: 32px;
+        }
+        &__img {
+        height: 350px;
+        }
+        &__header {
+            padding-bottom: 80px;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .company {
+        width: 600px;
+        margin: auto;
+        margin-top: 60px;
+        border-radius: 20px;
+        box-shadow: $box-shadow;
+    }
+    .running {
+        width: 65%;
+        max-width: 1000px;
+        margin: 80px auto;
+    }
+    .restaurant {
+        padding: 50px 10%;
+        padding-bottom: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px 5%;
+        &__card  {
+            width: 45%;
+            max-width: 500px;
+            height: 300px;
+            &__img {
+                height: 250px;
+            }
+            &__heart {
+                bottom: -1%;
+                right: 8%;
+            }
+            &__new {
+                padding: 8px 16px;
+                font-size: 16px;
+            }
+        }
+        & h2 {
+            width: 100%;
+            margin-bottom: 0%;
+        }
+    }
+    .restaurantpage {
+        &__header {
+            margin-top: 0%;
+        }
+        &__img {
+            height: 300px;
+            object-position: 50% 55%;
+        }
+        &__heart {
+            font-size: 38px;
+        }
+    }
+    .menu {
+        display: flex;
+        padding-left: 1%;
+        padding-right: 1%;
+        &__bloc {
+            width: 32%;
+            max-width: 450px;
+            margin: 0% auto
+        }
+        &__card {
+            &:active .menu__card__check {
+                transform: translateX(150px);
+                transition: none;
+            }
+            &:active .menu__card__check--icon {
+                transform: rotate(0deg);
+                transition: none;
+            }
+            &:active .menu__card__price {
+                margin-right: 25px;
+            }
+            &:hover .menu__card__check {
+                transform: translateX(0px);
+            }
+            &:hover .menu__card__check--icon {
+                transform: rotate(360deg);
+            }
+            &:hover .menu__card__price {
+                margin-right: 90px;
+            }
+            &:active .menu__card__check--icon {
+                animation-delay: 0s;
+            }
+        }
     }
 }

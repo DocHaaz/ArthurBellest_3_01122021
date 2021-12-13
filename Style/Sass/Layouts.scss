@@ -5,7 +5,7 @@
     text-align: center;
     box-shadow: $box-shadow;
     &__logo {
-        width: 200px;
+        width: 180px;
         margin: 24px 0px 12px 0px;
     }
     &__home {
@@ -21,32 +21,89 @@
         visibility: hidden;
     }
 }
+@media screen and (min-width:768px) {
+    .header {
+        &__home {
+            position: absolute;
+            left: 6%;
+            margin-top: 28px;
+        }
+        &__arrow {
+            font-size: 18px;
+            opacity: 1;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+        &__txt {
+            visibility: visible;
+            position: absolute;
+            font-size: 20px;
+            font-family: $font-logo;
+        }
+    }
+}
 /* fin header */
 
 /* footer */
 .footer {
+    display: flex;
+    flex-direction: column;
     color: $colour-white;
     background-color: $colour-footer;
-    padding: 10px 0px;
+    padding: 20px 0px;
+    margin-bottom: -1px;
     &__logo {
         font-family: $font-logo;
-        font-size: 28px;
+        font-size: 18px;
         padding-left: 40px;
         margin: 0px 0px 5px 0px;
     }
-    &__icon {
-        width: 20px;
-        margin-right: 8px;
-    }
     &__list {
+        display: flex;
+        flex-direction: column;
         list-style-type: none;
+        &__icon {
+            width: 20px;
+            margin-right: 8px;
+        }
         & li {
-            line-height: 2;
+            line-height: 1.5;
             font-family: $font-secondary;
             font-size: 18px;
         }
         & a {
             color: $colour-white;
+        }
+    }
+}
+@media screen and (min-width:768px) {
+    .footer {
+        &__logo {
+            padding-left: 16%;
+            font-size: 24px;
+        }
+        &__list {
+            padding-left: 15%;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .footer {
+        &__logo {
+            align-self: center;
+            padding-left: 0px;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+        &__list {
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding-left: 0px;
+            & li {
+                width: 15%;
+                font-size: 20px;
+            }
         }
     }
 }
@@ -123,6 +180,17 @@
         }
     }
 }
+@media screen and (min-width:1200px) {
+    .loadspinner {
+        &__color {
+            margin: 0px auto;
+            width: 400px;
+            &__element {
+                height: 20px;
+            }
+        }
+    }
+}
 /* loading spinner ending */
 
 /* localisation */
@@ -146,7 +214,7 @@ input[type=text] {
 #placesearch::placeholder {
     color: $colour-black;
     opacity: 0.8;
-    font-size: 14px;
+    font-size: 16px;
     font-family: $font-main;
 }
 /* fin localisation */

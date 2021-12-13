@@ -159,7 +159,7 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .header__logo {
-  width: 200px;
+  width: 180px;
   margin: 24px 0px 12px 0px;
 }
 .header__home {
@@ -175,28 +175,52 @@ button:hover {
   visibility: hidden;
 }
 
+@media screen and (min-width: 768px) {
+  .header__home {
+    position: absolute;
+    left: 6%;
+    margin-top: 28px;
+  }
+  .header__arrow {
+    font-size: 18px;
+    opacity: 1;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  .header__txt {
+    visibility: visible;
+    position: absolute;
+    font-size: 20px;
+    font-family: Shrikhand;
+  }
+}
 /* fin header */
 /* footer */
 .footer {
+  display: flex;
+  flex-direction: column;
   color: #FFFFFF;
-  background-color: #232323;
-  padding: 10px 0px;
+  background-color: #333333;
+  padding: 20px 0px;
+  margin-bottom: -1px;
 }
 .footer__logo {
   font-family: Shrikhand;
-  font-size: 28px;
+  font-size: 18px;
   padding-left: 40px;
   margin: 0px 0px 5px 0px;
 }
-.footer__icon {
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.footer__list__icon {
   width: 20px;
   margin-right: 8px;
 }
-.footer__list {
-  list-style-type: none;
-}
 .footer__list li {
-  line-height: 2;
+  line-height: 1.5;
   font-family: Roboto-thin;
   font-size: 18px;
 }
@@ -204,6 +228,32 @@ button:hover {
   color: #FFFFFF;
 }
 
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    padding-left: 16%;
+    font-size: 24px;
+  }
+  .footer__list {
+    padding-left: 15%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__logo {
+    align-self: center;
+    padding-left: 0px;
+    margin-bottom: 25px;
+    font-size: 32px;
+  }
+  .footer__list {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0px;
+  }
+  .footer__list li {
+    width: 15%;
+    font-size: 20px;
+  }
+}
 /* fin footer */
 /* loading spinner */
 .loadspinner {
@@ -277,6 +327,15 @@ button:hover {
   animation-delay: 0.5s;
 }
 
+@media screen and (min-width: 1200px) {
+  .loadspinner__color {
+    margin: 0px auto;
+    width: 400px;
+  }
+  .loadspinner__color__element {
+    height: 20px;
+  }
+}
 /* loading spinner ending */
 /* localisation */
 .tracking {
@@ -299,7 +358,7 @@ input[type=text] {
 #placesearch::placeholder {
   color: #000000;
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Roboto;
 }
 
@@ -320,16 +379,16 @@ input[type=text] {
 }
 
 .running {
-  margin: 10% 5%;
+  margin: 60px 25px;
 }
 .running__bloc {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 70px;
   margin: 20px 0px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 15px;
+  border-radius: 20px;
   position: relative;
   background-color: #F2F2F2;
 }
@@ -345,7 +404,7 @@ input[type=text] {
   opacity: 0;
   z-index: 0;
   transition: 100ms;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 .running__bloc:hover::before {
   opacity: 1;
@@ -377,7 +436,7 @@ input[type=text] {
 }
 
 .restaurant {
-  padding: 10% 5%;
+  padding: 60px 5%;
   background-color: #F2F2F2;
 }
 .restaurant__card {
@@ -386,14 +445,14 @@ input[type=text] {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 15px;
 }
-.restaurant__img {
+.restaurant__card__img {
   object-fit: cover;
   width: 100%;
-  height: 200px;
+  height: 180px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.restaurant__new {
+.restaurant__card__new {
   position: absolute;
   top: 5%;
   right: 5%;
@@ -404,7 +463,7 @@ input[type=text] {
   font-family: Roboto;
   color: #1b6150;
 }
-.restaurant__txt {
+.restaurant__card__txt {
   display: flex;
   flex-direction: column;
   padding-left: 15px;
@@ -414,13 +473,13 @@ input[type=text] {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.restaurant__txt h3 {
+.restaurant__card__txt h3 {
   margin: 15px 0% 5px 0%;
 }
-.restaurant__txt p {
+.restaurant__card__txt p {
   margin: 0% 0% 15px 0%;
 }
-.restaurant__heart {
+.restaurant__card__heart {
   bottom: 10%;
   right: 5%;
 }
@@ -432,7 +491,7 @@ input[type=text] {
 /* Menu */
 .restaurantpage {
   background-color: #F2F2F2;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 .restaurantpage__img {
   object-fit: cover;
@@ -442,7 +501,7 @@ input[type=text] {
 .restaurantpage__header {
   display: flex;
   padding-top: 30px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   padding-left: 4%;
   margin-top: -50px;
   position: relative;
@@ -459,7 +518,7 @@ input[type=text] {
 }
 
 .menu {
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .menu__bloc {
   width: 90%;
@@ -509,19 +568,17 @@ input[type=text] {
 .menu__card--10 {
   animation-delay: 2000ms;
 }
-.menu__card:hover .menu__check {
+.menu__card:active .menu__card__check {
   transform: translateX(0px);
 }
-.menu__card:hover .menu__check--icon {
-  transform: rotate(360deg);
-}
-.menu__card:hover .menu__price {
+.menu__card:active .menu__card__price {
   margin-right: 90px;
 }
-.menu__card:active .menu__check--icon {
-  animation: Check 200ms forwards;
+.menu__card:active .menu__card__check--icon {
+  transform: rotate(360deg);
+  animation: Check 200ms 500ms forwards;
 }
-.menu__check {
+.menu__card__check {
   position: absolute;
   right: 0%;
   width: 80px;
@@ -535,29 +592,29 @@ input[type=text] {
   transition: 600ms;
   text-align: center;
 }
-.menu__check--icon {
+.menu__card__check--icon {
   font-size: 22px;
   margin-top: 22px;
   color: #FFFFFF;
-  transition: 350ms 180ms;
+  transition: transform 350ms 180ms;
 }
-.menu__price {
+.menu__card__price {
   align-self: flex-end;
   margin-right: 25px;
   margin-bottom: 12px;
   transition-duration: 600ms;
 }
-.menu__txt {
+.menu__card__txt {
   overflow: hidden;
   padding: 12px;
 }
-.menu h3 {
+.menu__card h3 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: auto;
 }
-.menu p {
+.menu__card p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -582,25 +639,8 @@ input[type=text] {
   margin-top: 50px;
 }
 
+/* Responsive */
 @media screen and (min-width: 768px) {
-  .header__home {
-    position: absolute;
-    left: 6%;
-    margin-top: 28px;
-  }
-  .header__arrow {
-    font-size: 18px;
-    opacity: 1;
-    margin-top: 5px;
-    margin-right: 10px;
-  }
-  .header__txt {
-    visibility: visible;
-    position: absolute;
-    font-size: 20px;
-    font-family: Shrikhand;
-  }
-
   .running h2 {
     margin-bottom: 20px;
   }
@@ -614,23 +654,14 @@ input[type=text] {
   .restaurantpage__heart {
     font-size: 32px;
   }
-
-  .menu__img {
+  .restaurantpage__img {
     height: 350px;
   }
-  .menu__header {
+  .restaurantpage__header {
     padding-bottom: 80px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .loadspinner__color {
-    margin: 0px auto;
-    width: 400px;
-  }
-  .loadspinner__color__element {
-    height: 20px;
-  }
-
   .company {
     width: 600px;
     margin: auto;
@@ -658,20 +689,20 @@ input[type=text] {
     max-width: 500px;
     height: 300px;
   }
-  .restaurant__img {
+  .restaurant__card__img {
     height: 250px;
   }
-  .restaurant__heart {
+  .restaurant__card__heart {
     bottom: -1%;
     right: 8%;
+  }
+  .restaurant__card__new {
+    padding: 8px 16px;
+    font-size: 16px;
   }
   .restaurant h2 {
     width: 100%;
     margin-bottom: 0%;
-  }
-  .restaurant__new {
-    padding: 8px 16px;
-    font-size: 16px;
   }
 
   .restaurantpage__header {
@@ -694,6 +725,29 @@ input[type=text] {
     width: 32%;
     max-width: 450px;
     margin: 0% auto;
+  }
+  .menu__card:active .menu__card__check {
+    transform: translateX(150px);
+    transition: none;
+  }
+  .menu__card:active .menu__card__check--icon {
+    transform: rotate(0deg);
+    transition: none;
+  }
+  .menu__card:active .menu__card__price {
+    margin-right: 25px;
+  }
+  .menu__card:hover .menu__card__check {
+    transform: translateX(0px);
+  }
+  .menu__card:hover .menu__card__check--icon {
+    transform: rotate(360deg);
+  }
+  .menu__card:hover .menu__card__price {
+    margin-right: 90px;
+  }
+  .menu__card:active .menu__card__check--icon {
+    animation-delay: 0s;
   }
 }
 
