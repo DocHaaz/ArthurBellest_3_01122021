@@ -88,12 +88,7 @@ a {
   color: #000000;
 }
 
-h1 {
-  font-size: 24px;
-  margin: 0%;
-}
-
-h2 {
+h1, h2 {
   font-size: 24px;
   margin: 0%;
 }
@@ -135,13 +130,6 @@ button:hover {
 
 /* button end */
 /* button heart */
-.heart {
-  position: absolute;
-}
-.heart:active + .heartfull {
-  animation: heart 200ms forwards;
-}
-
 .heartfull {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
@@ -303,28 +291,44 @@ button:hover {
   animation: load 0.6s infinite;
 }
 .loadspinner__color__element--1 {
+  animation-delay: 0.1s;
   background-color: #99E2D0;
-  animation-delay: 0s;
 }
 .loadspinner__color__element--2 {
+  animation-delay: 0.2s;
   background-color: #99E2D0;
-  animation-delay: 0.1s;
 }
 .loadspinner__color__element--3 {
+  animation-delay: 0.3s;
   background-color: #FF79DA;
-  animation-delay: 0.2s;
 }
 .loadspinner__color__element--4 {
+  animation-delay: 0.4s;
   background-color: #FF79DA;
-  animation-delay: 0.3s;
 }
 .loadspinner__color__element--5 {
+  animation-delay: 0.5s;
   background-color: #9356DC;
-  animation-delay: 0.4s;
 }
 .loadspinner__color__element--6 {
+  animation-delay: 0.6s;
   background-color: #9356DC;
-  animation-delay: 0.5s;
+}
+.loadspinner__color__element--7 {
+  animation-delay: 0.7s;
+  background-color: #9356DC;
+}
+.loadspinner__color__element--8 {
+  animation-delay: 0.8s;
+  background-color: #9356DC;
+}
+.loadspinner__color__element--9 {
+  animation-delay: 0.9s;
+  background-color: #9356DC;
+}
+.loadspinner__color__element--10 {
+  animation-delay: 1s;
+  background-color: #9356DC;
 }
 
 @media screen and (min-width: 1200px) {
@@ -369,7 +373,7 @@ input[type=text] {
   padding: 20px 0px 50px 0px;
   text-align: center;
 }
-.company h1 {
+.company h1, .company h2 {
   padding: 10px 60px;
 }
 .company p {
@@ -480,8 +484,12 @@ input[type=text] {
   margin: 0% 0% 15px 0%;
 }
 .restaurant__card__heart {
+  position: absolute;
   bottom: 10%;
   right: 5%;
+}
+.restaurant__card__heart:active + .heartfull {
+  animation: heart 200ms forwards;
 }
 .restaurant h2 {
   margin-bottom: 25px;
@@ -514,7 +522,11 @@ input[type=text] {
   font-size: 26px;
 }
 .restaurantpage__heart {
+  position: absolute;
   right: 6%;
+}
+.restaurantpage__heart:active + .heartfull {
+  animation: heart 200ms forwards;
 }
 
 .menu {
@@ -649,6 +661,14 @@ input[type=text] {
   }
   .running__icon {
     left: 18%;
+  }
+
+  .restaurant__card {
+    max-width: 700px;
+    margin: 40px auto;
+  }
+  .restaurant__card__img {
+    height: 220px;
   }
 
   .restaurantpage__heart {

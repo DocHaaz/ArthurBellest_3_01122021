@@ -15,6 +15,46 @@ $box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 $box-shadow-bold: rgba(0, 0, 0, 0.24) 2px 5px 4px;
 /* Variables end */
 
+@mixin Overflow-hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin Flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin Card-border {
+    box-shadow: $box-shadow;
+    border-radius: 15px;
+}
+
+@mixin heart {
+    position: absolute;
+    &:active + .heartfull {
+        animation: heart 200ms forwards;
+    }
+}
+
+@mixin Card_animation {
+    @for $i from 1 through 10 {
+        &--#{$i} {
+            animation-delay: (0.1s * $i);
+        @if ($i < 3) {
+            background-color: $colour-tertiary;
+        }
+        @else if ($i < 5) {
+            background-color: $colour-secondary;
+        }
+        @else {
+            background-color: $colour-primary;
+        }
+    }
+    }
+}
+
 /* Keyframes */
 @keyframes menu{
     0%{

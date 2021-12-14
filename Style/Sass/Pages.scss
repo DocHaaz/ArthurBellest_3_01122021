@@ -73,8 +73,7 @@
     &__card {
         position: relative;
         margin-bottom: 20px;
-        box-shadow: $box-shadow;
-        border-radius: 15px;
+        @include Card-border;
         &__img {
             object-fit: cover;
             width: 100%;
@@ -94,8 +93,7 @@
             color: darken($color: $colour-tertiary, $amount: 50%);
         }
         &__txt {
-            display: flex;
-            flex-direction: column;
+            @include Flex-column;
             padding-left: 15px;
             margin-top: -5px;
             text-align: start;
@@ -110,6 +108,7 @@
             }
         }
         &__heart {
+            @include heart;
             bottom: 10%;
             right: 5%;
         }
@@ -145,6 +144,7 @@
         font-size: 26px;
     }
     &__heart {
+        @include heart;
         right: 6%;
     }
 }
@@ -164,8 +164,7 @@
         overflow: hidden;
         margin: 15px 0px;
         background-color: $colour-white;
-        box-shadow: $box-shadow;
-        border-radius: 15px;
+        @include Card-border;
         cursor: pointer;
         animation: menucard 400ms ease-out backwards;
         @for $i from 1 through 10 {
@@ -214,15 +213,11 @@
             padding: 12px;
         }
         & h3 {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            @include Overflow-hidden;
             margin: auto;
         }
         & p {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap
+            @include Overflow-hidden;
         }
     }
     & h2 {
@@ -256,6 +251,15 @@
         }
         &__icon {
             left: 18%;
+        }
+    }
+    .restaurant {
+        &__card {
+            max-width: 700px;
+            margin: 40px auto;
+            &__img {
+                height: 220px;
+            }
         }
     }
     .restaurantpage {

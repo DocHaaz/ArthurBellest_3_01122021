@@ -46,8 +46,7 @@
 
 /* footer */
 .footer {
-    display: flex;
-    flex-direction: column;
+    @include Flex-column;
     color: $colour-white;
     background-color: $colour-footer;
     padding: 20px 0px;
@@ -59,8 +58,7 @@
         margin: 0px 0px 5px 0px;
     }
     &__list {
-        display: flex;
-        flex-direction: column;
+        @include Flex-column;
         list-style-type: none;
         &__icon {
             width: 20px;
@@ -115,8 +113,7 @@
     background-color: $colour-white;
     font-family: $font-logo;
     position: fixed;
-    display: flex;
-    flex-direction: column;
+    @include Flex-column;
     justify-content: center;
     top: 0%;
     left: 0%;
@@ -153,30 +150,7 @@
             height: 15px;
             margin-top: 30px;
             animation: load 0.6s infinite;
-            &--1 {
-                background-color: $colour-tertiary;
-                animation-delay: 0s;
-            }
-            &--2 {
-                background-color: $colour-tertiary;
-                animation-delay: 0.1s;
-            }
-            &--3 {
-                background-color: $colour-secondary;
-                animation-delay: 0.2s;
-            } 
-            &--4 {
-                background-color: $colour-secondary;
-                animation-delay: 0.3s;
-            }
-            &--5 {
-                background-color: $colour-primary;
-                animation-delay: 0.4s;
-            }
-            &--6 {
-                background-color: $colour-primary;
-                animation-delay: 0.5s;
-            } 
+            @include Card_animation;
         }
     }
 }
