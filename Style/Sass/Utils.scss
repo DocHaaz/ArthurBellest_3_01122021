@@ -38,7 +38,7 @@ $box-shadow-bold: rgba(0, 0, 0, 0.24) 2px 5px 4px;
     }
 }
 
-@mixin Card_animation {
+@mixin loadingspinner {
     @for $i from 1 through 10 {
         &--#{$i} {
             animation-delay: (0.1s * $i);
